@@ -34,11 +34,9 @@
 
     <script>
         function fetchJoke() {
-            // Kérés a szerver felé
             fetch('http://localhost:8001/joke')
                 .then(response => response.json())
                 .then(data => {
-                    // Vicc megjelenítése
                     document.getElementById('jokeContainer').innerText = data.joke;
                 })
                 .catch(error => {

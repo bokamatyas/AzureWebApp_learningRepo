@@ -16,5 +16,5 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run:  |
-        docker build . --file Dockerfile --tag cr.jedlik.cloud/html-test-bokamatyas:0.1
-        docker push cr.jedlik.cloud/html-test-bokamatyas:0.1
+        docker build . --file Dockerfile --tag ghcr.io/bokamatyas/html-test-agv:0.1
+        docker push ghcr.io/html-test-agv:0.1

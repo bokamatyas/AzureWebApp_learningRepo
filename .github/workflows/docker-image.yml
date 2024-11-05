@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run:  |
         docker build . --file Dockerfile --tag ghcr.io/bokamatyas/html-test-agv:0.1
-        docker push ghcr.io/html-test-agv:0.1
+        docker push ghcr.io/bokamatyas/html-test-agv:0.1

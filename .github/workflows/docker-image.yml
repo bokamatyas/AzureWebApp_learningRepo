@@ -17,10 +17,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set Image tag
+      run:  |
+        echo "IMAGE_TAG=$(date +%s)" >> $GITHUB_ENV
+        
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run:  |
-        echo "IMAGE_TAG=$(date +%s)" >> $GITHUB_ENV
         cd html
         docker build . --file Dockerfile --tag ghcr.io/bokamatyas/html-test-agv:$IMAGE_TAG
         docker login ghcr.io --username bokamatyas --password ${{secrets.GHCR_TOKEN}}
